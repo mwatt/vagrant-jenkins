@@ -12,11 +12,13 @@ package{"git-core":
 }
 
 jenkins::plugin {
-  "git" : ;
+  "git" :
+    version => "1.1.26";
 }
 
-jenkins::plugin{
-  "gradle" : ;
+jenkins::plugin {
+  "gradle" :
+    version => "1.21";
 }
 
 include jenkins
