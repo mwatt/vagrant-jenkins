@@ -8,6 +8,4 @@ The important part of this project is the set of configuration files provided to
 To run this project you will need gradle and vagrant with their dependencies. 
 
 To Do:
- - Install JDK
- - Make the test pass
- - Refector puppet manifets 
+ - Refector puppet manifests 
