@@ -6,6 +6,7 @@ class { 'gradle':
 package{"unzip":
     ensure=>"installed",
     before=> Class['gradle'],
+    require=>Exec['apt-get update'],
 }
  
 package{"git-core":
@@ -77,3 +78,13 @@ jenkins::plugin {
 
 include jenkins
 include gradle
+
+class{'java':
+  require=> Exec['apt-get update']
+}
+
+exec{'apt-get update':
+  command=>"/usr/bin/apt-get update"
+}
+
+include java

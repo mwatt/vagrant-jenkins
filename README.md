@@ -9,5 +9,5 @@ To run this project you will need gradle and vagrant with their dependencies.
 
 To Do:
  - Install JDK
- - Make test to pass
+ - Make the test pass
  - Refector puppet manifets 
