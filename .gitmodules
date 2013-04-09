@@ -1,0 +1,18 @@
+[submodule "jenkins_files/modules/apt"]
+	path = jenkins_files/modules/apt
+	url = https://github.com/puppetlabs/puppetlabs-apt.git
+[submodule "jenkins_files/modules/archive"]
+	path = jenkins_files/modules/archive
+	url = https://github.com/smarchive/puppet-archive.git
+[submodule "jenkins_files/modules/gradle"]
+	path = jenkins_files/modules/gradle
+	url = https://github.com/mwatt/puppet-gradle.git
+[submodule "jenkins_files/modules/java"]
+	path = jenkins_files/modules/java
+	url = https://github.com/puppetlabs/puppetlabs-java.git
+[submodule "jenkins_files/modules/jenkins"]
+	path = jenkins_files/modules/jenkins
+	url = https://github.com/rtyler/puppet-jenkins.git
+[submodule "jenkins_files/modules/stdlib"]
+	path = jenkins_files/modules/stdlib
+	url = https://github.com/puppetlabs/puppetlabs-stdlib.git

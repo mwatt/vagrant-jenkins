@@ -56,7 +56,7 @@ Vagrant::Config.run do |config|
   #
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "jenkins_files/manifests"
-    puppet.module_path="modules"
+    puppet.module_path="jenkins_files/modules"
     puppet.manifest_file  = "lucid32.pp"
   end
 
