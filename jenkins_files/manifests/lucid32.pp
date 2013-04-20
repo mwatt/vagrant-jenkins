@@ -58,7 +58,7 @@ file { "jenkins-project":
 
 file { "jenkins-project-config":
   path	   => "/var/lib/jenkins/jobs/prueba/config.xml",
-  source   => '/vagrant/jenkins_files/config.xml',
+  source   => '/vagrant/config.xml',
   ensure   => "present",
   owner	   => 'jenkins',
   group    => 'jenkins',
