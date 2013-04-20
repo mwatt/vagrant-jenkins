@@ -8,4 +8,6 @@ The important part of this project is the set of configuration files provided to
 To run this project you will need gradle and vagrant with their dependencies. 
 
 To Do:
- - Refector puppet manifests 
+ - Create script to vagrant up from project root
+ - Allow customization of the different jenkins project parameters
+ - Split the example project from real one
