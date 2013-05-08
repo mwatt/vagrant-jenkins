@@ -1,0 +1,27 @@
+task startCI(type:Exec) {
+	workingDir project.ext.workingDir
+	  
+		commandLine 'vagrant','up'
+	  
+		//store the output instead of printing to the console:
+		standardOutput = new ByteArrayOutputStream()
+	  
+		//extension method stopTomcat.output() can be used to obtain the output:
+	ext.output = {
+	  return standardOutput.toString()
+	}
+ }
+
+task stopCI(type:Exec) {
+	workingDir project.ext.workingDir
+	
+	commandLine 'vagrant','destroy','--force'
+	
+	//store the output instead of printing to the console:
+	standardOutput = new ByteArrayOutputStream()
+	
+	//extension method stopTomcat.output() can be used to obtain the output:
+	ext.output = {
+		return standardOutput.toString()
+	}
+}

@@ -1,5 +1,9 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
+
+project.ext.workingDir='jenkins_files'
+apply from: 'jenkins_files/build.gradle'
+
 defaultTasks 'clean', 'build'
 
 repositories{
@@ -8,32 +12,4 @@ repositories{
 
 dependencies {
         testCompile 'junit:junit:4.11'
-}
-
-task startCI(type:Exec) {
-	workingDir 'jenkins_files'
-	  
-		commandLine 'vagrant','up'
-	  
-		//store the output instead of printing to the console:
-		standardOutput = new ByteArrayOutputStream()
-	  
-		//extension method stopTomcat.output() can be used to obtain the output:
-	ext.output = {
-	  return standardOutput.toString()
-	}
- }
-
-task stopCI(type:Exec) {
-	workingDir 'jenkins_files'
-	
-	commandLine 'vagrant','destroy','--force'
-	
-	//store the output instead of printing to the console:
-	standardOutput = new ByteArrayOutputStream()
-	
-	//extension method stopTomcat.output() can be used to obtain the output:
-	ext.output = {
-		return standardOutput.toString()
-	}
 }
