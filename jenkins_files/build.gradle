@@ -1,4 +1,21 @@
-task startCI(type:Exec) {
+project.ext.buildDir=file(project.ext.workingDir  +'/build')
+	
+task createBuild<<{
+	if(project.ext.buildDir.exists()){
+		project.ext.buildDir.deleteDir()
+	}
+	
+	project.ext.buildDir.mkdir()	
+}
+
+task copyTemplate(type:Copy, dependsOn:'createBuild'){
+	from file(project.ext.workingDir + '/project_config.template')
+	into project.ext.buildDir
+	rename('project_config.template','config.xml')
+}
+
+
+task startCI(type:Exec,dependsOn:'copyTemplate') {
 	workingDir project.ext.workingDir
 	  
 		commandLine 'vagrant','up'
