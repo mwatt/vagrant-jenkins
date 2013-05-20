@@ -1,5 +1,5 @@
 class { 'gradle':
-  version => '1.3',
+  version => '1.6',
   timeout => 1500, 
 }
 
