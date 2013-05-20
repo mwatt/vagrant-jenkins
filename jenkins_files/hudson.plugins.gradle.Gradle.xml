@@ -1,7 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<hudson.plugins.git.GitSCM_-DescriptorImpl plugin="git@1.1.26">
-  <generation>1</generation>
-  <globalConfigName>watt-ci</globalConfigName>
-  <globalConfigEmail>ci@watt.org</globalConfigEmail>
-  <createAccountBasedOnEmail>false</createAccountBasedOnEmail>
-</hudson.plugins.git.GitSCM_-DescriptorImpl>
+<hudson.plugins.gradle.Gradle_-DescriptorImpl plugin="gradle@1.21">
+  <installations>
+    <hudson.plugins.gradle.GradleInstallation>
+      <name>Default</name>
+      <home>/opt/gradle</home>
+      <properties/>
+      <gradleHome>/opt/gradle</gradleHome>
+    </hudson.plugins.gradle.GradleInstallation>
+  </installations>
+</hudson.plugins.gradle.Gradle_-DescriptorImpl>
