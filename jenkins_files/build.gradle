@@ -12,14 +12,17 @@ task createBuild<<{
 task copyTemplate(dependsOn:'createBuild')<<{
 	copy{
 		from file(project.ext.workingDir + '/project_config.template')
-		from file(project.ext.workingDir + '/hudson.plugins.git.GitSCM.xml')
-		from file(project.ext.workingDir + '/hudson.plugins.gradle.Gradle.xml')
+		from file(project.ext.workingDir + '/hudson.plugins.git.GitSCM.template')
+		from file(project.ext.workingDir + '/hudson.plugins.gradle.Gradle.template')
 		into project.ext.buildDir
 		rename('project_config.template','config.xml')
+		rename('hudson.plugins.git.GitSCM.template','hudson.plugins.git.GitSCM.xml')
+		rename('hudson.plugins.gradle.Gradle.template','hudson.plugins.gradle.Gradle.xml')
 	}
 	copy{
-		from file(project.ext.workingDir + '/manifests/lucid32.pp')
+		from file(project.ext.workingDir + '/manifests/lucid32.template')
 		into file(project.ext.workingDir  +'/build/manifests')
+		rename('lucid32.template','lucid32.pp')
 	}
 }
 
