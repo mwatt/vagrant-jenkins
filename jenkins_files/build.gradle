@@ -6,12 +6,21 @@ task createBuild<<{
 	}
 	
 	project.ext.buildDir.mkdir()	
+	new File(project.ext.buildDir, 'manifests').mkdir()	
 }
 
-task copyTemplate(type:Copy, dependsOn:'createBuild'){
-	from file(project.ext.workingDir + '/project_config.template')
-	into project.ext.buildDir
-	rename('project_config.template','config.xml')
+task copyTemplate(dependsOn:'createBuild')<<{
+	copy{
+		from file(project.ext.workingDir + '/project_config.template')
+		from file(project.ext.workingDir + '/hudson.plugins.git.GitSCM.xml')
+		from file(project.ext.workingDir + '/hudson.plugins.gradle.Gradle.xml')
+		into project.ext.buildDir
+		rename('project_config.template','config.xml')
+	}
+	copy{
+		from file(project.ext.workingDir + '/manifests/lucid32.pp')
+		into file(project.ext.workingDir  +'/build/manifests')
+	}
 }
 
 

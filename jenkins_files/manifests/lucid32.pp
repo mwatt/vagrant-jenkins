@@ -20,7 +20,7 @@ user { "jenkins":
 
 file { "gradle-jenkins":
   path	   => "/var/lib/jenkins/hudson.plugins.gradle.Gradle.xml",
-  source   => '/vagrant/hudson.plugins.gradle.Gradle.xml',
+  source   => '/vagrant/build/hudson.plugins.gradle.Gradle.xml',
   ensure   => "present",
   owner	   => 'jenkins',
   group    => 'jenkins',
@@ -30,7 +30,7 @@ file { "gradle-jenkins":
 
 file { "git-jenkins":
   path	   => "/var/lib/jenkins/hudson.plugins.git.GitSCM.xml",
-  source   => '/vagrant/hudson.plugins.git.GitSCM.xml',
+  source   => '/vagrant/build/hudson.plugins.git.GitSCM.xml',
   ensure   => "present",
   owner	   => 'jenkins',
   group    => 'jenkins',
